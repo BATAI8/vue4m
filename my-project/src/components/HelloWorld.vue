@@ -12,7 +12,7 @@
     <ul>
       <li>
         <!--  -->
-        <p>3weqweqweqqe2313213weww122323321213321213e</p>
+        <p>3weqweqweqqe2313213weww21fsdf213123122323321213321213e</p>
         <a
           href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
           target="_blank"

@@ -1,11 +1,7 @@
-<!-- 组件传值 -->
-
+<!-- 组件子传父 -->
 <template>
-  <!-- 父传子 -->
-  <div class="box">
-    <p>我是子组件</p>
-    <p>{{ text1 }}</p>
-    <p>{{ tt }}</p>
+  <div class="">
+    <p @click="dianji">点击我，我是子组件，我要给父组件传值</p>
   </div>
 </template>
 
@@ -16,12 +12,10 @@
 export default {
   //import引入的组件需要注入到对象中才能使用
   components: {},
-  //  <!-- 父传子 -->
-  props: ["text1"],
   data() {
     //这里存放数据
     return {
-      tt: this.text1
+      text: "我是子组件里面的text，我要传给父组件"
     };
   },
   //监听属性 类似于data概念
@@ -29,11 +23,18 @@ export default {
   //监控data中的数据变化
   watch: {},
   //方法集合
-  methods: {},
+  methods: {
+    dianji: function() {
+      // 给父组件传值用$emit，"text"是绑定在子组件@后面那个key, this.text是data里面的值
+      this.$emit("text", this.text);
+    }
+  },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
   //生命周期 - 挂载完成（可以访问DOM元素）
-  mounted() {},
+  mounted() {
+    // this.$emit("text", this.text);
+  },
   beforeCreate() {}, //生命周期 - 创建之前
   beforeMount() {}, //生命周期 - 挂载之前
   beforeUpdate() {}, //生命周期 - 更新之前

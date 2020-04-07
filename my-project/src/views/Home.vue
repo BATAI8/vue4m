@@ -6,7 +6,12 @@
     <TodoVue></TodoVue>
     <ClassPanDuan />
     <InputText />
+
+    <!-- 父传子的写法 -->
     <ZuJian :text1="text" />
+
+    <!-- 子传父的写法 -->
+    <ZUJianzcf @text="getz" />
   </div>
 </template>
 
@@ -18,8 +23,11 @@ import TodoVue from "@/components/TodoVue.vue";
 import ClassPanDuan from "@/components/ClassPanDuan.vue";
 // 表单练习
 import InputText from "@/components/InputText.vue";
-// 组件传值
+// 父传子组件传值
 import ZuJian from "@/components/ZuJian.vue";
+
+// 子传父组件传值
+import ZUJianzcf from "@/components/ZUJianzcf.vue";
 export default {
   name: "Home",
   data() {
@@ -33,7 +41,13 @@ export default {
     TodoVue,
     ClassPanDuan,
     InputText,
-    ZuJian
+    ZuJian,
+    ZUJianzcf
+  },
+  methods: {
+    getz: function(t) {
+      console.log(t);
+    }
   }
 };
 </script>
